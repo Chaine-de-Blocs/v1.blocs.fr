@@ -26,9 +26,11 @@
 
 @font-face {
   font-family: 'socials';
+  font-display: swap;
   src: url(/assets/fonts/socials.woff2);
   font-weight: normal;
   font-style: normal;
+  font-display: fallback;
 }
  
 [class^="icon-"]:before, [class*=" icon-"]:before {
