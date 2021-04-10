@@ -17,7 +17,7 @@ import htmlComponents from "./htmlComponents";
 const DefaultLayout = (props: any) => (
   <html>
     <head>
-      <title>{props.title ?? "No title"}</title>
+      <title>{props.title ?? "Cool website"}</title>
       <meta charSet="utf-8" />
     </head>
     <body>{props.children}</body>
@@ -27,6 +27,42 @@ const DefaultLayout = (props: any) => (
 type Transform = {
   data: Record<string, any>;
   children: JSX.Element;
+};
+
+export function getAnchor(text: any): string {
+  if (typeof text !== 'string') {
+    return '';
+  }
+  return encodeURI(text
+    .toLowerCase()
+    .replace(/[^a-z0-9éèêëœ ]/gi, '')
+    .replace(/ /g, '-'));
+}
+
+const H2 = ({ children }: any) => {
+  const anchor = getAnchor(children);
+  const link = `#${anchor}`;
+  return (
+    <h2 id={anchor} className={className("anchor-title")}>
+      <a href={link} className={className("anchor-link")}>
+        §
+      </a>
+      {children}
+    </h2>
+  );
+};
+
+const H3 = ({ children }: any) => {
+  const anchor = getAnchor(children);
+  const link = `#${anchor}`;
+  return (
+    <h3 id={anchor} className={className("anchor-title")}>
+      <a href={link} className={className("anchor-link")}>
+        §
+      </a>
+      {children}
+    </h3>
+  );
 };
 
 const transform = cacheTransform<Transform>((content, file: File) => {
@@ -50,6 +86,8 @@ const transform = cacheTransform<Transform>((content, file: File) => {
       ...htmlComponents,
       ...builtInComponents,
       ...userComponents,
+      h2: H2,
+      h3: H3,
     },
     scope: {
       cssVariable: variable,

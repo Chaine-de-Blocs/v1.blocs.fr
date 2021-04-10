@@ -1,0 +1,24 @@
+.clipboard-action {
+    padding: 0px 8px;
+    vertical-align: top;
+    cursor: pointer;
+    color: var(--primary);
+}
+.clipboard-action:hover {
+    text-decoration: underline;
+}
+.copy-result {
+    opacity: 0;
+    color: white;
+    font-weight: bold;
+    background-color: var(--primary);
+    padding: 5px 10px;
+    margin-left: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: opacity;
+    transition: 123ms;
+}
+.copy-result.display {
+    opacity: 1 !important;
+}

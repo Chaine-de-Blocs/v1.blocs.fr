@@ -5,20 +5,24 @@ import glob from "glob";
 // @ts-ignore
 import frontmatter from "frontmatter";
 
+type PageMetaKey = 'title' | 'description' | 'image';
+
 const name = (filename: string) =>
   path.basename(filename, path.extname(filename));
 
-const title = (filename: string): string | null => {
+const pageMeta = <T>(key: PageMetaKey, filename: string): T | null => {
   const content = fs.readFileSync(filename, "utf8");
   const { data } = frontmatter(content);
-  return data.title ?? null;
-};
+  return data[key] as T ?? null;
+}
 
 export type File = {
   url: string;
   title: string | null;
+  description: string | null;
   filename: string;
   date: number | null;
+  imageURL: string | null;
 };
 
 const pages: File[] = (glob.sync(
@@ -26,9 +30,11 @@ const pages: File[] = (glob.sync(
 ) as string[]).map(
   (filename): File => ({
     url: name(filename),
-    title: title(filename),
+    title: pageMeta('title', filename),
+    description: null,
     filename,
     date: null,
+    imageURL: null,
   })
 );
 
@@ -39,10 +45,12 @@ const posts: File[] = (glob.sync(
     (filename): File => ({
       url: name(filename).replace(
         /^(\d{4})-(\d{2})-(\d{2})-(.*)$/,
-        "$1/$2/$3/$4"
+        "articles/$4"
       ),
-      title: title(filename),
+      title: pageMeta('title', filename),
+      description: pageMeta('description', filename),
       filename,
+      imageURL: pageMeta('image', filename),
       date: Date.parse(filename.match(/(\d{4}-\d{2}-\d{2})/)![1]),
     })
   )

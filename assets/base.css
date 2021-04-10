@@ -24,6 +24,39 @@
     U+20AC, U+2122, U+2191, U+2193, U+2212, U+FEFF; */
 }
 
+@font-face {
+  font-family: 'socials';
+  src: url(/assets/fonts/socials.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "socials";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  line-height: 1em;
+ 
+  margin-left: .2em;
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 *,
 *::before,
 *::after {
@@ -42,22 +75,16 @@
 }
 
 :root {
-  --pocket-jam: #f97f51;
-  --piano-tabs: #fc427b;
-  --technicalc-light: #0652dd;
-  --technicalc-dark: #2771f9; /* 12% lighter */
-  --technicalc: var(--technicalc-light);
-  --freebies: #a3cb38;
-  --blog: #ed4c67;
-  --primary: var(--color);
-  --color: black;
-  --background: white;
+  --primary: #0070FC;
+  --secondary: #FBE016;
+  --color: white;
+  --background: black;
   --gutter-top: 12px;
   --gutters: 12px;
 }
 
 ::selection {
-  background: var(--primary);
+  background-color: var(--primary);
   color: white;
 }
 
@@ -69,8 +96,23 @@ body {
 }
 
 a {
-  color: var(--primary);
+  color: var(--color);
   text-decoration: none;
+}
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+.socials a span {
+  font-size: 26px;
+}
+.socials a {
+  color: var()
+}
+
+.anchor-link {
+  float: left;
+  margin-left: -24px;
 }
 
 a:hover,
@@ -133,7 +175,8 @@ a.header__logo {
   display: block;
   margin: 10px 24px 0 0;
   font-size: 14px;
-  --font-weight: 400;
+  color: var(--color);
+  --font-weight: 600;
   line-height: 18px;
 }
 
@@ -141,11 +184,45 @@ a.header__logo {
   margin-right: 0;
 }
 
+a.btn {
+  display: block;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 125px;
+  margin: 0 auto;
+  color: var(--color);
+  padding: 13px;
+  text-decoration: none;
+  border: 1px solid var(--color);
+  border-radius: 6px;
+  background-color: transparent;
+  outline: none;
+  height: 44px;
+  max-height: 44px;
+  min-height: 44px;
+  line-height: 14px;
+  transform: translate(0px, 0px);
+  transition: all;
+  transition-duration: 123ms;
+}
+a.btn.plain {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--color);
+}
+a.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 1px #eee;
+}
+a.btn:active {
+  transform: translate(0, 0);
+  box-shadow: inset 0 0 7px #ccc;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --technicalc: var(--technicalc-dark);
     --color: white;
-    --background: black;
+    --background:#000F26;
   }
 }
 
@@ -160,3 +237,9 @@ a.header__logo {
     --gutters: 128px;
   }
 }
+
+.icon-instagram:before { content: '\f16d'; } /* '' */
+.icon-github:before { content: '\f300'; } /* '' */
+.icon-linkedin:before { content: '\f30c'; } /* '' */
+.icon-youtube:before { content: '\f167'; } /* '' */
+.icon-linkedin:before { content: '\f30c'; } /* '' */

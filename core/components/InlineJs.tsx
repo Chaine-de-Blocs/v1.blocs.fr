@@ -4,12 +4,14 @@ import { cacheTransform } from "../cacheTransform";
 import transformJs from "../transformJs";
 
 const transform = cacheTransform((content, src) => {
-  const input = content.asset(src);
+  const input = Array.isArray(src)
+    ? src.map(content.asset).join("\n")
+    : content.asset(src);
   return transformJs(content, input);
 });
 
 type Props = Omit<ScriptHTMLAttributes<any>, "src"> & {
-  src: string;
+  src: string | string[];
 };
 
 export default ({ src, ...props }: Props) => {

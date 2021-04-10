@@ -2,8 +2,6 @@
 :root {
   --gutters: max(12px, (100vw - var(--max-width)) / 2);
   --max-width: 800px;
-  /* Defined here so all blog posts use these colours */
-  --primary: var(--blog);
 }
 
 body {
@@ -34,12 +32,15 @@ h3 {
   font-weight: 600;
 }
 
+a {
+  color: var(--primary);
+}
+
 p {
   margin: 18px 0;
 }
 
 /* On the iPhone SE, link and code elements can cause sideways scroll */
-a,
 p > code {
   word-break: break-all;
 }
@@ -48,32 +49,47 @@ strong {
   font-weight: 600;
 }
 
-ul,
-ol {
+ul.post-list {
   margin: 24px 0;
   padding-left: 32px;
   margin-left: calc(-32 * min(max(var(--gutters) - 32px, 0px), 1px));
 }
+.post-list a {
+  color: var(--color);
+  font-weight: 600;
+}
 
-li {
+.post-list li {
+  display: flex;
+  flex-direction: row;
   position: relative;
   margin: 2px 0;
   list-style: none;
+  margin-bottom: 30px;
 }
 
-li::before {
-  position: absolute;
-  content: var(--bullet, "👉");
-  right: calc(100% + 12px);
+.post-list picture {
+  margin-top: 5px;
+  margin-right: 20px;
+}
+.post-list picture * {
+  border-radius: 5px;
 }
 
-li[data-bullet] {
-  --bullet: attr(data-bullet);
+.edit-date {
+  margin: 0;
+}
+
+.post-description {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+i {
+  font-size: 14px;
 }
 
 blockquote {
-  margin: 32px 24px 32px 48px;
-  font-size: 22px;
   line-height: 32px;
   font-weight: 300;
   font-style: italic;
@@ -87,6 +103,7 @@ table {
 }
 
 thead th {
+  border-bottom-color: var(--primary);
   border-bottom: var(--hairline-width) solid;
   --font-weight: 600;
   text-align: left;
@@ -131,10 +148,282 @@ iframe {
   color: #9e9e9e;
 }
 
+.post-preview {
+  cursor: pointer;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.summary .intro > p {
+  padding-top: 0;
+  margin-top: 0;
+}
+.summary .insert .section {
+  margin-bottom: 7px;
+}
+
+.summary .intro {
+  flex: 1;
+  margin-right: 15px;
+  width: 400px;
+}
+
+.summary .insert {
+  padding: 17px;
+  background-color: black;
+  border-radius: 4px;
+  box-shadow: 7px 10px 15px rgba(10, 10, 10, 0.2);
+  overflow: hidden;
+  max-width: 350px;
+}
+
+.summary .insert h2 {
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.summary .insert > div {
+  margin: 0;
+}
+
+.summary .insert > div div {
+  margin-left: 20px;
+}
+.summary .insert > div a {
+  display: block;
+  text-decoration: none;
+}
+.summary .insert > div a:hover {
+  text-decoration: underline;
+}
+
+.terminal {
+  box-shadow: 7px 10px 15px rgba(10, 10, 10, 0.2);
+}
+
+.terminal .fake-buttons {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: #ff3b47;
+  border-color: #9d252b;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fake-buttons.fake-minimize {
+  left: 11px;
+  background-color: #ffc100;
+  border-color: #9d802c;
+}
+
+.fake-buttons.fake-zoom {
+  left: 16px;
+  background-color: #00d742;
+  border-color: #049931;
+}
+
+.terminal .fake-bar {
+  position: relative;
+  width: 100%;
+  height: 25px;
+  background-color: #bbb;
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.terminal .fake-menu {
+  display: inline-block;
+  position: absolute;
+}
+
+.terminal .fake-title {
+  display: inline-block;
+  color: #333;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: top;
+  line-height: 25px;
+}
+
+.terminal .fake-screen {
+  background-color: black;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 16px;
+}
+
+.terminal .cmd {
+  font-family: monospace !important;
+  padding: 0;
+  margin: 0;
+}
+.terminal .prompt {
+  color: var(--secondary);
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+.terminal .term-highlight {
+  background-color: white;
+  color: black;
+}
+
+.terminal i {
+  color: #666;
+}
+
+#isso-thread h4 {
+  display: none;
+}
+#isso-thread input[type=button], #isso-thread input[type=submit] {
+  cursor: pointer;
+  font-size: 16px;
+  width: 125px;
+  margin: 0 auto;
+  color: #FFF;
+  padding: 13px;
+  text-decoration: none;
+  border: 1px solid #FFF;
+  border-radius: 6px;
+  background-color: transparent;
+  outline: none;
+  height: 44px;
+  max-height: 44px;
+  min-height: 44px;
+  line-height: 14px;
+  transform: translate(0px, 0px);
+  transition: all;
+  transition-duration: 123ms;
+}
+#isso-thread input[type=submit] {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+#isso-thread input[type=button]:hover, #isso-thread input[type=submit]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 1px #eee;
+}
+#isso-thread input[type=button]:active, #isso-thread input[type=submit]:active {
+  transform: translate(0, 0);
+  box-shadow: inset 0 0 7px #ccc;
+}
+#isso-thread input[type=checkbox] {
+  margin-right: 6px;
+}
+#isso-thread > div > div > div > div {
+  color: black;
+}
+#isso-thread label {
+  color: #FFF;
+}
+#isso-thread h1,
+#isso-thread h2, 
+#isso-thread h3, 
+#isso-thread h4, 
+#isso-thread h5, 
+#isso-thread h6 {
+  margin: 0;
+}
+#isso-thread code {
+  color: white;
+}
+#isso-thread input[type=text], #isso-thread input[type=email] {
+  margin-bottom: 15px;
+  padding: 10px;
+  padding-right: 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0px;
+  outline-color: #eee;
+  color: white;
+  margin-right: 10px;
+}
+#isso-thread .textarea::placeholder, 
+#isso-thread input[type=text]::placeholder,
+#isso-thread input[type=email]::placeholder {
+  color: #bbb;
+}
+#isso-thread .textarea:focus, #isso-thread .textarea::active,
+#isso-thread input[type=text]:focus, #isso-thread input[type=text]:active,
+#isso-thread input[type=email]:focus, #isso-thread input[type=email]:active {
+  border-color: var(--primary) !important;
+}
+.isso-postbox > .form-wrapper .textarea {
+  min-height: 100px !important;
+  color: black;
+}
+#isso-thread input[name=website] {
+  display: none;
+}
+#isso-thread .auth-section {
+  margin-top: 30px;
+}
+#isso-thread .auth-section > .input-wrapper {
+  padding-right: 15px;
+}
+#isso-thread preview {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+#isso-thread #isso-root .avatar {
+  margin: 0;
+}
+#isso-thread #isso-root .author,
+#isso-thread > div > div > div > div {
+  color: #FFF !important;
+}
+.comments h2 {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.comments p {
+  margin-top: 0;
+}
+.comments i {
+  font-size: 14px;
+}
+
 @media (min-width: 768px) {
   a,
   p > code {
     word-break: initial;
+  }
+}
+
+@media (max-width: 484px) {
+  .post-list li {
+    flex-direction: column;
+  }
+  .post-list li img {
+    width: 100%;
+  }
+  .post-list {
+    padding-left: 0 !important;
+    padding: 0 15px !important;
+  }
+  .post-list picture {
+    margin-bottom: 10px;
+    margin-right: 0;
   }
 }
 
