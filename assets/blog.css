@@ -343,6 +343,16 @@ iframe {
 #isso-thread h5, 
 #isso-thread h6 {
   margin: 0;
+  line-height: 1em;
+}
+#isso-thread h1 {
+  font-size: 2em;
+}
+#isso-thread h2 {
+  font-size: 1.6;
+}
+#isso-thread h3 {
+  font-size: 1.2;
 }
 #isso-thread code {
   color: white;
@@ -369,9 +379,9 @@ iframe {
 #isso-thread input[type=email]:focus, #isso-thread input[type=email]:active {
   border-color: var(--primary) !important;
 }
-.isso-postbox > .form-wrapper .textarea {
+#isso-thread .textarea {
   min-height: 100px !important;
-  color: black;
+  color: black !important;
 }
 #isso-thread input[name=website] {
   display: none;
@@ -390,8 +400,15 @@ iframe {
 #isso-thread #isso-root .avatar {
   margin: 0;
 }
-#isso-thread #isso-root .author,
+/* Isso textarea */
 #isso-thread > div > div > div > div {
+  min-height: 100px !important;
+  font-size: 14px;
+}
+#isso-thread > div > div > div > div > div {
+  max-height: 1.5em;
+}
+#isso-thread #isso-root .author {
   color: #FFF !important;
 }
 .comments h2 {
