@@ -6,6 +6,8 @@
 
 body {
   line-height: 26px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -429,12 +431,12 @@ iframe {
 
 @media (prefers-color-scheme: dark) {
   code {
-    background-color: #111;
+    background-color: #000;
     border-color: #222;
   }
 
   pre code {
-    background-color: #080808;
+    background-color: #000;
     border-color: #111;
   }
 }
