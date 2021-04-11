@@ -125,7 +125,7 @@ Avant de commencer vous allez devoir chercher votre nom de domaine Tor en tapant
 
 `blocsiq5epwbye47.onion` est mon nom de domaine (hostname).
 
-> Si vous voulez savoir comment avoir un domaine qui commence par un mot ou pseudo comme ici "blocs", faites le moi savoir par [email](https://blocs.fr/#contact).
+> Si vous voulez savoir comment avoir un domaine qui commence par un mot ou pseudo comme ici "blocs", laissez un commentaire plus bas.
 
 Pour configurer Bitcoin vous allez modifier `.bitcoin/bitcoin.conf` avec les informations suivantes :
 
@@ -215,7 +215,7 @@ A partir d'ici votre nœud est connecté au réseau en passant par Tor ! Il est 
 
 Nous, ce qui nous intéresse ce sont `bitcoind` et `lnd`. On va passer tous les ports d'écoute en revue et comprendre si oui ou non ils sont "torrifiés" :
 - `lnd 9735` : C'est le port de LND, "torrifiée" avec le clé privée de votre Tor ;
-- `bitcoind 28332` : C'est le port [ZMQ](https://zeromq.org/) de Bitcoin, il sert à la configuration et n'est pas distribué ;
+- `bitcoind 28332` : C'est le port <Link href="https://zeromq.org/">ZMQ</Link> de Bitcoin, il sert à la configuration et n'est pas distribué ;
 - `bitcoind 8333` : C'est le port de `bitcoind` qui est caché via Tor (HiddenServicePort dans `/etc/tor/torrc`) ;
 - `bitcoind 8332` : C'est le port JSON-RPC de `bitcoind`, nul besoin de le cacher avec Tor si vous ne le distribuez pas ;
 - `bitcoind 8332 IPV6` : C'est le port ipv6 de `bitcoind` qui est caché via Tor (HiddenServicePort dans `/etc/tor/torrc`) ;
@@ -252,7 +252,7 @@ Enfin pour voir si `lnd` a bien considéré vos modifications, tapez `lncli geti
 
 Intéressez vous à la partie d'en bas, `"uris"`, qui est une liste des adresses distribuées dans le réseau. Ici je n'ai qu'une adresse qui est un .onion, voir ce qui suit le "@". La partie de gauche est la clé publique de mon lnd.
 
-> .onion est un nom de domaine exclusif au routage en oignon comme le fait Tor. Comme vous pouvez l'imaginer, c'est réellement une référence à la plante. Cela vient du routage qui recouvre le message de plusieurs couches, comme un oignon où le coeur est enrobé de plusieurs couches. [MrBidouille en a fait une parfaite vidéo introductive](https://www.youtube.com/watch?v=zjqw1VnuKLs).
+> .onion est un nom de domaine exclusif au routage en oignon comme le fait Tor. Comme vous pouvez l'imaginer, c'est réellement une référence à la plante. Cela vient du routage qui recouvre le message de plusieurs couches, comme un oignon où le coeur est enrobé de plusieurs couches. <Link href="https://www.youtube.com/watch?v=zjqw1VnuKLs">MrBidouille en a fait une parfaite vidéo introductive</Link>.
 
 Vérifications faites, vous êtes cachés, bravo !
 

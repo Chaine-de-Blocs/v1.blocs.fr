@@ -69,7 +69,7 @@ Avant d'entamer la configuration de votre Raspberry installez un nouveau systèm
 
 > Stretch Lite est un système d'exploitation dans le but d'optimiser la consommation de ressources sur notre système.
 
-Installez Raspian Stretch Lite sur la carte SD fournie avec le Raspberry Pi. Il vous faudra la formater. Avec Windows le logiciel <a href="https://www.balena.io/etcher/" target="_blank">Etcher</a> est d'une grande aide. Sur [Mac](https://computers.tutsplus.com/articles/how-to-flash-an-sd-card-for-raspberry-pi--mac-53600) et [distributions Linux](https://www.raspberrypi.org/documentation/installation/installing-images/linux.md) préférez la ligne de commande.
+Installez Raspian Stretch Lite sur la carte SD fournie avec le Raspberry Pi. Il vous faudra la formater. Avec Windows le logiciel <a href="https://www.balena.io/etcher/" target="_blank">Etcher</a> est d'une grande aide. Sur <Link href="https://computers.tutsplus.com/articles/how-to-flash-an-sd-card-for-raspberry-pi--mac-53600">Mac</Link> et <Link href="https://www.raspberrypi.org/documentation/installation/installing-images/linux.md">distributions Linux</Link> préférez la ligne de commande.
 
 ## Configurer le Raspberry Pi
 
@@ -251,7 +251,7 @@ Afin de protéger votre installation du mieux que possible je recommande de cré
 
 ## Préparer le disque dur
 
-Vous aurez besoin de télécharger l'entièreté de la blockchain Bitcoin qui fait [250go](https://bitinfocharts.com/bitcoin/) à l'heure où j'écris ces lignes. Cela signifie que la petite carte SD du Raspberry ne peut pas mémoriser tout ça.    On va faire en sorte que toutes les informations relatives à la blockchain résident dans le disque externe.
+Vous aurez besoin de télécharger l'entièreté de la blockchain Bitcoin qui fait <Link href="https://bitinfocharts.com/bitcoin/">250go</Link> à l'heure où j'écris ces lignes. Cela signifie que la petite carte SD du Raspberry ne peut pas mémoriser tout ça.    On va faire en sorte que toutes les informations relatives à la blockchain résident dans le disque externe.
 
 Une fois que vous avez branché votre disque dur sur votre Raspberry, vous devriez le retrouver en tapant la commande `df -h`. Cette commande va vous lister quelque chose qui ressemble à ce qui suit :
 
@@ -296,9 +296,9 @@ _Pour cette partie restez connecté à l'utilisateur `bitcoin` en tapant `su bit
 
 `bitcoind` est le système central de Bitcoin, le "d" à la fin signifie "daemon" qui désigne un service exécuté et maintenu par la machine. `bitcoin-cli` est une interface de commande qui permet d’interagir avec le service Bitcoin. Les deux s'installent ensemble, ce qui est super !
 
-D'abord vous devrez chercher les fichiers d'installation de Bitcoin, je vous le donne ici : [bitcoin-0.19.0.1-arm-linux-gnueabihf.tar.gz](https://bitcoin.org/bin/bitcoin-core-0.19.0.1/bitcoin-0.19.0.1-arm-linux-gnueabihf.tar.gz). Gardez ce lien vous en aurez besoin.
+D'abord vous devrez chercher les fichiers d'installation de Bitcoin, je vous le donne ici : <Link href="https://bitcoin.org/bin/bitcoin-core-0.19.0.1/bitcoin-0.19.0.1-arm-linux-gnueabihf.tar.gz">bitcoin-0.19.0.1-arm-linux-gnueabihf.tar.gz</Link>. Gardez ce lien vous en aurez besoin.
 
-Je tiens à souligner que vous pouvez le chercher par vous même en vous rendant [ici](https://bitcoincore.org/en/download/) et en sélectionnant "ARM Linux 64bits". Je vous conseille de le faire vous même car les versions sont mises à jour, ci-dessus vous avez la version 0.19.0.1 de Bitcoin Core.
+Je tiens à souligner que vous pouvez le chercher par vous même en vous rendant <Link href="https://bitcoincore.org/en/download/">ici</Link> et en sélectionnant "ARM Linux 64bits". Je vous conseille de le faire vous même car les versions sont mises à jour, ci-dessus vous avez la version 0.19.0.1 de Bitcoin Core.
 
 Suivez les commandes ci-dessous pour installer `bitcoind`
 
@@ -382,7 +382,7 @@ _Pour cette partie restez connecté à l'utilisateur `bitcoin` en tapant `su bit
 
 `lnd` est le service qui va transformer le RaspberryPi en un nœud Lightning Network. Il va se connecter automatiquement a l'interface de commande du service `bitcoind`. Tout comme `bitcoind` LND embarque l'interface de commande `lncli`.
 
-La procédure pour installer LND ressemble à l'installation de Bitcoin. La première chose à faire est de télécharger le service en vous rendant sur ce lien [github.com/lightningnetwork/lnd/releases](https://github.com/lightningnetwork/lnd/releases). Ici vous trouverez toutes les versions officielles de LND. Récupérez maintenant le lien de la dernière version "linux-armv7", voici celle que j'ai à l'heure où j'écris cet article [lnd-linux-armv7-v0.8.2-beta.tar.gz](https://github.com/lightningnetwork/lnd/releases/download/v0.8.2-beta/lnd-linux-armv7-v0.8.2-beta.tar.gz).
+La procédure pour installer LND ressemble à l'installation de Bitcoin. La première chose à faire est de télécharger le service en vous rendant sur ce lien <Link href="https://github.com/lightningnetwork/lnd/releases">github.com/lightningnetwork/lnd/releases</Link>. Ici vous trouverez toutes les versions officielles de LND. Récupérez maintenant le lien de la dernière version "linux-armv7", voici celle que j'ai à l'heure où j'écris cet article <Link href="https://github.com/lightningnetwork/lnd/releases/download/v0.8.2-beta/lnd-linux-armv7-v0.8.2-beta.tar.gz">lnd-linux-armv7-v0.8.2-beta.tar.gz</Link>.
 
 Notez bien que mon exemple s'applique pour la version que j'ai envoyée : v0.8.2beta.
 
@@ -432,7 +432,7 @@ autopilot.maxchannels=3
 autopilot.allocation=0.5
 ```
 
-> "autopilot" vous intrigue peut-être. C'est un algorithme qui connecte automatiquement des nœuds présents dans le réseau décentralisé, typiquement des nœuds Bitcoin et Lightning Network. Autopilot intègre le modèle [Barabási–Albert](https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model) dans l'idée de produire un réseau pair-à-pair en théorie homogène. Personnellement je l'active mais en aucun cas cela est nécessaire.
+> "autopilot" vous intrigue peut-être. C'est un algorithme qui connecte automatiquement des nœuds présents dans le réseau décentralisé, typiquement des nœuds Bitcoin et Lightning Network. Autopilot intègre le modèle <Link href="https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barabási–Albert</Link> dans l'idée de produire un réseau pair-à-pair en théorie homogène. Personnellement je l'active mais en aucun cas cela est nécessaire.
 
 ## Démarrer LND
 
@@ -524,7 +524,7 @@ Pour vérifier que votre nœud est bien recensé sur les internets allez cherche
   ]}
 />
 
-Ma clé publique est `03a2c34daf010b3501daf704b5a321e82e1631421b7ffa18dd49014967eda82dc9`, elle sert d'identifiant au nœud. Maintenant si votre nœud est bien configuré et en route, vous pouvez le trouver sur ce site : [1ml.com](https://1ml.com) en tapant dans la recherche la clé publique de votre nœud.
+Ma clé publique est `03a2c34daf010b3501daf704b5a321e82e1631421b7ffa18dd49014967eda82dc9`, elle sert d'identifiant au nœud. Maintenant si votre nœud est bien configuré et en route, vous pouvez le trouver sur ce site : <Link href="https://1ml.com">1ml.com</Link> en tapant dans la recherche la clé publique de votre nœud.
 
 ---
 

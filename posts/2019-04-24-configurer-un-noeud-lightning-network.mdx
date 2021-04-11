@@ -87,7 +87,7 @@ Voyons quelles modifications vous pouvez apporter afin de mieux sécuriser les a
 
 `StrictModes yes` : Assure les accès aux fichiers en fonction de l'utilisateur connecté.
 
-`PermitRootLogin no` : Mettez PermitRootLogin à `no`, cette option bloquera les connexions SSH à l'utilisateur administrateur du Raspberry. Si vous avez suivi [l'installation que je recommande](https://blocs.fr/articles/installer-un-noeud-lightning-network) vous avez un utilisateur nommé `bitcoin` qui a pour rôle d'administrer les services bitcoind et lnd. C'est sur ce dernier que vous vous connecterez via SSH et non sur l'utilisateur root.
+`PermitRootLogin no` : Mettez PermitRootLogin à `no`, cette option bloquera les connexions SSH à l'utilisateur administrateur du Raspberry. Si vous avez suivi <Link href="/articles/installer-un-noeud-lightning-network">l'installation que je recommande</Link> vous avez un utilisateur nommé `bitcoin` qui a pour rôle d'administrer les services bitcoind et lnd. C'est sur ce dernier que vous vous connecterez via SSH et non sur l'utilisateur root.
 
 `MaxAuthTries 3` : Nombre d'essais pour se connecter via SSH limité à 3. Cela bloque les attaques par brute force automatisé.
 
@@ -113,9 +113,9 @@ Cela se passe en un commande. Suivez le terminal ci-dessous. Notez que cela doit
   ]}
 />
 
-Ensuite vous devrez taper le mot de passe de l'utilisateur "bitcoin". Notez que l'IP `192.168.1.42` ([comment trouver l'IP de mon nœud ?](/articles/installer-un-noeud-lightning-network#ifconfig)) doit être l'IP de votre nœud distant. Cette action aura pour effet de recenser la clé publique de votre machine dans le Raspberry Pi, il vous reconnaîtra pour les connexions futures et ne vous demandera plus de mot de passe.
+Ensuite vous devrez taper le mot de passe de l'utilisateur "bitcoin". Notez que l'IP `192.168.1.42` (<Link href="/articles/installer-un-noeud-lightning-network#ifconfig">comment trouver l'IP de mon nœud ?</Link>) doit être l'IP de votre nœud distant. Cette action aura pour effet de recenser la clé publique de votre machine dans le Raspberry Pi, il vous reconnaîtra pour les connexions futures et ne vous demandera plus de mot de passe.
 
-> Si vous êtes sur Windows en utilisant PuTTy, vous pouvez générer et trouver votre clé publique avec [PuTTyGen](https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-putty/). Copiez cette clé qui commence par "ssh-rsa" si vous l'avez créé avec le chiffrement RSA. Cliquez sur "Save private key" et enregistrez le fichier sur votre machine. Revenez sur PuTTy, sur le panneau de gauche trouvez "Connection / SSH / Auth" puis dans la section "Private key file for authentication" chargez le fichier de votre clé privée, c'est un fichier .ppk. Connectez vous à votre Raspberry en utilisant PuTTy. Une fois connecté tapez `sudo nano .ssh/authorized_keys` et collez la clé publique que vous aviez copié, puis sauvegardez le fichier. C'est terminé désormais votre Raspberry connaît votre clé publique et autorisera les connexions futures depuis votre machine Windows.
+> Si vous êtes sur Windows en utilisant PuTTy, vous pouvez générer et trouver votre clé publique avec <Link href="https://www.digitalocean.com/docs/droplets/how-to/add-ssh-keys/create-with-putty/">PuTTyGen</Link>. Copiez cette clé qui commence par "ssh-rsa" si vous l'avez créé avec le chiffrement RSA. Cliquez sur "Save private key" et enregistrez le fichier sur votre machine. Revenez sur PuTTy, sur le panneau de gauche trouvez "Connection / SSH / Auth" puis dans la section "Private key file for authentication" chargez le fichier de votre clé privée, c'est un fichier .ppk. Connectez vous à votre Raspberry en utilisant PuTTy. Une fois connecté tapez `sudo nano .ssh/authorized_keys` et collez la clé publique que vous aviez copié, puis sauvegardez le fichier. C'est terminé désormais votre Raspberry connaît votre clé publique et autorisera les connexions futures depuis votre machine Windows.
 
 ## Ajouter une couche supplémentaire à l'authentification SSH
 
