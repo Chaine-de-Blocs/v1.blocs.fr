@@ -114,10 +114,10 @@ thead th {
 code {
   font-size: 0.9em;
   font-family: monospace;
-  padding: 0 3px;
+  padding: 6px;
   background-color: #f4f4f4;
   border: 1px solid #eee;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 pre code {
