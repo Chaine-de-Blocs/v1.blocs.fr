@@ -1,6 +1,4 @@
-# Fork from Jacob Does Code
-
-> [http://jacobdoescode.com](http://jacobdoescode.com)
+# [Blocs.fr](https://blocs.fr) Forked from [Jacob Does Code](http://jacobdoescode.com)
 
 Custom static site builder. Laid out very similar to Jekyll, but uses React heavily under the hood. It has the following advantages:
 
