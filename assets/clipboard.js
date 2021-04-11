@@ -1,6 +1,6 @@
 (function() {
     /* events on clipboard */
-    const clipboards = document.querySelectorAll('.clipboard-action_');
+    const clipboards = document.querySelectorAll('.cliboard-action-selector');
 
     for (const cl in clipboards) {
         clipboards[cl].onclick = function(_) {

@@ -27,7 +27,7 @@ const renderTermLines = (prompt: string, lines: Array<TermLine>, baseID: string)
         </span>
         {
             !l.hideClipboard &&
-                <span className={classNames("clipboard-action")} data-value={getID(baseID, i)}>
+                <span className={classNames("clipboard-action") + " cliboard-action-selector"} data-value={getID(baseID, i)}>
                     📋
                 </span>
         }

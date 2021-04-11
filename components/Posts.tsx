@@ -7,7 +7,7 @@ import { className, classNames } from "../core/css";
 export default () => (
   <ul className={className("post-list")}>
     {getPosts().map(({ url, title, filename, imageURL, date, description }) => (
-      <li className={className("post-preview")} key={filename} data-post-url={url}>
+      <li className={className("post-preview") + " post-preview-selector"} key={filename} data-post-url={url}>
         {
           imageURL &&
             <Image src={imageURL} className="preview" resize={{ width: 200 }}>
