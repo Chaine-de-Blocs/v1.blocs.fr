@@ -87,7 +87,7 @@ Voyons quelles modifications vous pouvez apporter afin de mieux sécuriser les a
 
 `StrictModes yes` : Assure les accès aux fichiers en fonction de l'utilisateur connecté.
 
-`PermitRootLogin no` : Mettez PermitRootLogin à `no`, cette option bloquera les connexions SSH à l'utilisateur administrateur du Raspberry. Si vous avez suivi [l'installation que je recommande](https://blocs.fr/articles/installer-un-nœud-lightning-network) vous avez un utilisateur nommé `bitcoin` qui a pour rôle d'administrer les services bitcoind et lnd. C'est sur ce dernier que vous vous connecterez via SSH et non sur l'utilisateur root.
+`PermitRootLogin no` : Mettez PermitRootLogin à `no`, cette option bloquera les connexions SSH à l'utilisateur administrateur du Raspberry. Si vous avez suivi [l'installation que je recommande](https://blocs.fr/articles/installer-un-noeud-lightning-network) vous avez un utilisateur nommé `bitcoin` qui a pour rôle d'administrer les services bitcoind et lnd. C'est sur ce dernier que vous vous connecterez via SSH et non sur l'utilisateur root.
 
 `MaxAuthTries 3` : Nombre d'essais pour se connecter via SSH limité à 3. Cela bloque les attaques par brute force automatisé.
 
