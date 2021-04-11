@@ -33,7 +33,7 @@
   font-display: fallback;
 }
  
-[class^="icon-"]:before, [class*=" icon-"]:before, [class="icon"] {
+[class^="icon-"]:before, [class*=" icon-"]:before, .icon:before {
   font-family: "socials";
   font-style: normal;
   font-weight: normal;
