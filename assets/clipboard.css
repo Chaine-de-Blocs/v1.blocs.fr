@@ -19,6 +19,3 @@
     transition: opacity;
     transition: 123ms;
 }
-.copy-result.display {
-    opacity: 1 !important;
-}

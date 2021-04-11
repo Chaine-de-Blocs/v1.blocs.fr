@@ -22,8 +22,8 @@
             }
 
             const copyRes = document.querySelector(id + '_copy-result');
-            copyRes.classList.add('display_');
-            window.setTimeout(() => copyRes.classList.remove('display_'), 3111);
+            copyRes.style.opacity = 1;
+            window.setTimeout(() => copyRes.style.opacity = 0, 3111);
         }
     }
 })();
