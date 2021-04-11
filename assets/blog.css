@@ -379,10 +379,6 @@ iframe {
 #isso-thread input[type=email]:focus, #isso-thread input[type=email]:active {
   border-color: var(--primary) !important;
 }
-#isso-thread .textarea {
-  min-height: 100px !important;
-  color: black !important;
-}
 #isso-thread input[name=website] {
   display: none;
 }
@@ -401,11 +397,20 @@ iframe {
   margin: 0;
 }
 /* Isso textarea */
-#isso-thread > div > div > div > div {
+#isso-thread > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type {
   min-height: 100px !important;
   font-size: 14px;
 }
-#isso-thread > div > div > div > div > div {
+#isso-thread #isso-root p,
+#isso-thread #isso-root h1,
+#isso-thread #isso-root h2,
+#isso-thread #isso-root h3,
+#isso-thread #isso-root i,
+#isso-thread #isso-root b,
+#isso-thread #isso-root strong {
+  color: var(--color);
+}
+#isso-thread > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type > div:first-of-type {
   max-height: 1.5em;
 }
 #isso-thread #isso-root .author {
