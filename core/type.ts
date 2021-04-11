@@ -4,6 +4,8 @@ export interface LayoutProps {
     file: File;
     title: string;
     description?: string;
+    image?: string;
+    imageAlt?: string;
     css?: string;
     js?: string;
     banner?: string;

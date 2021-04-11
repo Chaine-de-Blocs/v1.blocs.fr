@@ -6,13 +6,13 @@ import { className, classNames } from "../core/css";
 
 export default () => (
   <ul className={className("post-list")}>
-    {getPosts().map(({ url, title, filename, imageURL, date, description }) => (
+    {getPosts().map(({ url, title, filename, image, date, description }) => (
       <li className={className("post-preview") + " post-preview-selector"} key={filename} data-post-url={url}>
         {
-          imageURL &&
-            <Image src={imageURL} className="preview" resize={{ width: 200 }}>
+          image &&
+            <Image src={image} alt={title || ''} className="preview" resize={{ width: 200 }}>
               <ImageSource
-                src={imageURL}
+                src={image}
                 resize={{
                   width: 200,
                 }}

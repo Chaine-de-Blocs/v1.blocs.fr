@@ -7,6 +7,8 @@ import { LayoutProps } from '../core/type';
 export default ({
   title,
   description,
+  image,
+  imageAlt,
   css = "",
   js = "",
   primary,
@@ -19,11 +21,13 @@ export default ({
   };
 
   return (
-    <html style={style} lang="fr">
+    <html style={style} lang="fr" prefix="og: http://ogp.me/ns#">
       <head>
         <Header
           title={title}
           description={description}
+          image={image}
+          imageAlt={imageAlt}
           inlineCSS={css}
           inlineJS="/assets/set-hairline-width.js"
           assetsJS={js}
