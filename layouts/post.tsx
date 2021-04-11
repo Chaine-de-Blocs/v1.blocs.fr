@@ -5,6 +5,15 @@ import Nav from '../components/Nav';
 
 import { LayoutProps } from '../core/type';
 
+const parseFilename = (path: string): string => {
+  const splt = path.split('/');
+  if (splt.length === 0) {
+    return '';
+  }
+
+  return splt[splt.length - 1];
+}
+
 export default ({
   file,
   title,
@@ -45,7 +54,7 @@ export default ({
 
         <section className={className('contribute')}>
           <p>
-            <i>Cet article est sous license <a href="https://creativecommons.org/licenses/?lang=fr-FR" target="_blank">Creative Commons BY-NC-SA</a>. Il est ouvert à contribution en vous rendant sur ce lien : <a href={`https://github.com/Chaine-de-Blocs/blocs.fr/blob/master/posts/${file.filename}`} target="_blank">{file.title}</a></i>
+            <i>Cet article est sous license <a href="https://creativecommons.org/licenses/?lang=fr-FR" target="_blank">Creative Commons BY-NC-SA</a>. Il est ouvert à contribution en vous rendant sur ce lien : <a href={`https://github.com/Chaine-de-Blocs/blocs.fr/blob/master/posts/${parseFilename(file.filename)}`} target="_blank">{file.title}</a></i>
           </p>
         </section>
 
