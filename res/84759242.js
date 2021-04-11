@@ -1,1 +1,0 @@
-!function(){const o=document.querySelectorAll("li.post-preview_");for(const n in o)o[n].onclick=function(t){window.location.href=o[n].dataset.postUrl}}();
