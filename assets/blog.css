@@ -47,7 +47,7 @@ p > code {
   word-break: break-all;
 }
 
-em > code, blockquote > code {
+em > code, blockquote code {
   font-style: normal;
 }
 
