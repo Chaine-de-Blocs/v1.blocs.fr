@@ -5,7 +5,7 @@
 }
 
 body {
-  line-height: 26px;
+  line-height: 28px;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -118,7 +118,7 @@ thead th {
 code {
   font-size: 0.9em;
   font-family: monospace;
-  padding: 6px;
+  padding: 1px 5px;
   background-color: var(--background);
   border: 1px dotted var(--secondary);
   border-radius: 4px;
@@ -455,8 +455,5 @@ iframe {
   .anchor-link {
     margin-left: 0;
     margin-right: 8px;
-  }
-  code {
-    padding: 2px 6px;
   }
 }
