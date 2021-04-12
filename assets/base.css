@@ -76,11 +76,16 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --primary: #0070FC;
   --secondary: #FBE016;
   --color: white;
   --background: black;
+  --background-blue: #000F26;
   --gutter-top: 12px;
   --gutters: 12px;
 }
@@ -94,7 +99,7 @@ body {
   margin: var(--gutter-top) var(--gutters) 64px;
   font: 18px/26px Inter, system-ui, -apple-system, sans-serif;
   color: var(--color);
-  background: var(--background);
+  background: var(--background-blue);
 }
 
 a {
@@ -219,13 +224,6 @@ a.btn:hover {
 a.btn:active {
   transform: translate(0, 0);
   box-shadow: inset 0 0 7px #ccc;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color: white;
-    --background:#000F26;
-  }
 }
 
 @media (min-width: 768px) {

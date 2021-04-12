@@ -449,16 +449,8 @@ iframe {
     margin-bottom: 10px;
     margin-right: 0;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  code {
-    background-color: #000;
-    border-color: #222;
-  }
-
-  pre code {
-    background-color: #000;
-    border-color: #111;
+  .anchor-link {
+    margin-left: 0;
+    margin-right: 8px;
   }
 }
