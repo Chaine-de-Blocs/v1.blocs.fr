@@ -47,9 +47,10 @@ p > code {
   word-break: break-all;
 }
 
-em > code {
+em > code, blockquote > code {
   font-style: normal;
 }
+
 
 strong {
   font-weight: 600;
