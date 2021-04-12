@@ -76,10 +76,6 @@
   }
 }
 
-html {
-  overflow-x: hidden;
-}
-
 :root {
   --primary: #0070FC;
   --secondary: #FBE016;
