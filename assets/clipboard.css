@@ -8,6 +8,7 @@
     text-decoration: underline;
 }
 .copy-result {
+    position: absolute;
     opacity: 0;
     color: white;
     font-weight: bold;
