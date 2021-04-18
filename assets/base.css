@@ -82,6 +82,7 @@
   --color: white;
   --background: black;
   --background-blue: #000F26;
+  --shadow-color: #eee;
   --gutter-top: 12px;
   --gutters: 12px;
 }
@@ -89,6 +90,15 @@
 ::selection {
   background-color: var(--primary);
   color: white;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #111;
+    --secondary: #E3CB14;
+    --background: white;
+    --background-blue: #fefefe;
+    --shadow-color: #333;
+  }
 }
 
 body {
@@ -215,11 +225,11 @@ a.btn.plain {
 }
 a.btn:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 2px 2px 1px #eee;
+  box-shadow: 2px 2px 1px var(--shadow-color);
 }
 a.btn:active {
   transform: translate(0, 0);
-  box-shadow: inset 0 0 7px #ccc;
+  box-shadow: inset 0 0 7px var(--shadow-color);
 }
 
 @media (min-width: 768px) {

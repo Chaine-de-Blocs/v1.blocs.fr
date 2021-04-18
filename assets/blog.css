@@ -178,7 +178,7 @@ iframe {
 
 .summary .insert {
   padding: 17px;
-  background-color: black;
+  background-color: var(--background);
   border-radius: 4px;
   box-shadow: 7px 10px 15px rgba(10, 10, 10, 0.2);
   overflow: hidden;
@@ -186,7 +186,7 @@ iframe {
 }
 
 .summary .insert h2 {
-  color: white;
+  color: var(--color);
   margin: 0;
   margin-bottom: 10px;
 }
@@ -266,6 +266,7 @@ iframe {
 
 .terminal .fake-screen {
   background-color: black;
+  color: white;
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
@@ -303,7 +304,7 @@ iframe {
   font-size: 16px;
   width: 125px;
   margin: 0 auto;
-  color: #FFF;
+  color: var(--color);
   padding: 13px;
   text-decoration: none;
   border: 1px solid #FFF;
@@ -325,11 +326,11 @@ iframe {
 }
 #isso-thread input[type=button]:hover, #isso-thread input[type=submit]:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 2px 2px 1px #eee;
+  box-shadow: 2px 2px 1px var(--shadow-color);
 }
 #isso-thread input[type=button]:active, #isso-thread input[type=submit]:active {
   transform: translate(0, 0);
-  box-shadow: inset 0 0 7px #ccc;
+  box-shadow: inset 0 0 7px var(--shadow-color);
 }
 #isso-thread input[type=checkbox] {
   margin-right: 6px;
@@ -369,7 +370,7 @@ iframe {
   border: none;
   border-bottom: 1px solid white;
   border-radius: 0px;
-  outline-color: #eee;
+  outline-color: var(--shadow-color);
   color: white;
   margin-right: 10px;
 }
