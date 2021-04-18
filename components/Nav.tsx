@@ -26,10 +26,14 @@ const HeaderNav = ({ children }: { children: any }) => (
     </a>
   );
   
-  const HeaderLink = ({ href, children }: { href: string; children: string }) => (
-    <a href={href} className={classNames("header__link")}>
-      {children}
-    </a>
+  const HeaderLink = ({ href, id, children }: { href: string; id?: string; children?: string }) => (
+    id
+      ? <a href={href} className={classNames("header__link")} id={id}>
+          {children}
+        </a>
+      : <a href={href} className={classNames("header__link")}>
+          {children}
+        </a>
   );
 
 type Props = {
@@ -43,6 +47,7 @@ export default (_: Props) => {
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderSection last>Cool</HeaderSection>
       <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="#" id="theme-switch" />
     </HeaderNav>
   );
 };

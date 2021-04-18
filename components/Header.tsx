@@ -54,6 +54,7 @@ export default (props: Props) => {
 
       <meta property="article:author" content="Jonathan Serra" />
 
+      <InlineJs src="/assets/base.js" defer />
       {
         props.assetsJS
           .split(',')

@@ -101,6 +101,14 @@
   }
 }
 
+[data-theme="light"] {
+  --color: #111;
+  --secondary: #E3CB14;
+  --background: white;
+  --background-blue: #fefefe;
+  --shadow-color: #333;
+}
+
 body {
   margin: var(--gutter-top) var(--gutters) 64px;
   font: 18px/26px Inter, system-ui, -apple-system, sans-serif;
