@@ -91,6 +91,7 @@
   background-color: var(--primary);
   color: white;
 }
+/*
 @media (prefers-color-scheme: light) {
   :root {
     --color: #111;
@@ -100,6 +101,7 @@
     --shadow-color: #333;
   }
 }
+*/
 
 [data-theme="light"] {
   --color: #111;

@@ -32,11 +32,10 @@ const activateTheme = (theme, switchElt) => {
     switch (theme) {
         case 'light':
             switchElt.innerHTML = 'Activer le mode sombre';
-            document.documentElement.setAttribute('data-theme', 'light');
             break;
         case 'dark':
         default:
             switchElt.innerHTML = 'Activer le mode clair';
-            document.documentElement.setAttribute('data-theme', 'dark');
     }
+    document.documentElement.setAttribute('data-theme', theme);
 }
