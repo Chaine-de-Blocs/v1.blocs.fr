@@ -1,3 +1,6 @@
+import React from 'react';
+import { tokenToString } from 'typescript';
+
 import { className, classNames } from "../core/css";
 
 const HeaderNav = ({ children }: { children: any }) => (
@@ -26,9 +29,9 @@ const HeaderNav = ({ children }: { children: any }) => (
     </a>
   );
   
-  const HeaderLink = ({ href, id, children }: { href: string; id?: string; children?: string }) => (
-    id
-      ? <a href={href} className={classNames("header__link")} id={id}>
+  const HeaderLink = ({ href, classes, rawClass, children }: { href: string; classes?: string[]; rawClass?: string; children?: string }) => (
+    rawClass
+      ? <a href={href} className={classNames("header__link", classes) + " " + rawClass}>
           {children}
         </a>
       : <a href={href} className={classNames("header__link")}>
@@ -36,18 +39,21 @@ const HeaderNav = ({ children }: { children: any }) => (
         </a>
   );
 
-type Props = {
-};
+export default class extends React.Component {
+  public render() {
+    return (
+      <HeaderNav>
+        <HeaderLogo />
+        <HeaderSection>Site</HeaderSection>
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderSection last>Cool</HeaderSection>
+        <HeaderLink href="/blog">Blog</HeaderLink>
 
-export default (_: Props) => {
-  return (
-    <HeaderNav>
-      <HeaderLogo />
-      <HeaderSection>Site</HeaderSection>
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderSection last>Cool</HeaderSection>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="#" id="theme-switch" />
-    </HeaderNav>
-  );
-};
+        <a href="#" className={classNames("header__link")} id="theme-switch">
+          <span className={classNames("icon", "icon-light-up")}></span>
+          <span className={classNames("icon", "icon-moon")}></span>
+        </a>
+      </HeaderNav>
+    )
+  }
+}

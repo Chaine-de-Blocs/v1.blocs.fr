@@ -4,4 +4,5 @@ module.exports = {
     ["@babel/preset-env", { exclude: ["@babel/plugin-transform-regenerator"] }],
     ["@babel/preset-react", { runtime: "automatic" }],
   ],
+  plugins: ["@babel/plugin-proposal-class-properties"],
 };

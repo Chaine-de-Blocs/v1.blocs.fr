@@ -1,6 +1,5 @@
 const storageKey = 'blocs-data-theme';
 
-
 document.addEventListener("DOMContentLoaded", function() { 
     const userPrefersDark = window.matchMedia
         && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (themeSwitchElt) {
         activateTheme(currentTheme, themeSwitchElt);
         
-        themeSwitchElt.addEventListener('click', function () {
+        themeSwitchElt.addEventListener('click', () => {
             switch (currentTheme) {
                 case 'dark':
                     currentTheme = 'light';
@@ -29,13 +28,17 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 const activateTheme = (theme, switchElt) => {
+    const lightIcon = switchElt.childNodes[0];
+    const darkIcon = switchElt.childNodes[1];
     switch (theme) {
         case 'light':
-            switchElt.innerHTML = 'Activer le mode sombre';
+            darkIcon.style.display = "block";
+            lightIcon.style.display = "none";
             break;
         case 'dark':
         default:
-            switchElt.innerHTML = 'Activer le mode clair';
+            darkIcon.style.display = "none";
+            lightIcon.style.display = "block";
     }
     document.documentElement.setAttribute('data-theme', theme);
 }
