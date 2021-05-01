@@ -67,12 +67,15 @@ ul.post-list {
 }
 
 .post-list li {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   position: relative;
   margin: 2px 0;
   list-style: none;
   margin-bottom: 30px;
+  border-radius: 8px;
 }
 
 .post-list picture {
