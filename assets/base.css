@@ -96,10 +96,10 @@
 
 [data-theme="light"] {
   --color: #111;
-  --secondary: #E3CB14;
+  --secondary: #E32B89;
   --light: #667;
-  --background: white;
-  --background-blue: #fefefe;
+  --background: #fafafa;
+  --background-blue: #fcfcfe;
   --shadow-color: #333;
 }
 
