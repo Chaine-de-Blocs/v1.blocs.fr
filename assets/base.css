@@ -80,6 +80,7 @@
 :root {
   --primary: #0070FC;
   --secondary: #FBE016;
+  --light: #9e9e9e;
   --color: white;
   --background: black;
   --background-blue: #000F26;
@@ -96,6 +97,7 @@
 [data-theme="light"] {
   --color: #111;
   --secondary: #E3CB14;
+  --light: #667;
   --background: white;
   --background-blue: #fefefe;
   --shadow-color: #333;
