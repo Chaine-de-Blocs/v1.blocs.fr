@@ -33,6 +33,7 @@
     "date-fns": "^2.16.1",
     "deasync": "^0.1.21",
     "express": "^4.17.1",
+    "feed": "^4.2.2",
     "frontmatter": "^0.0.3",
     "glob": "^7.1.6",
     "highlight.js": "^10.5.0",

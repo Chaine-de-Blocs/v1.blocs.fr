@@ -1,10 +1,18 @@
 import chalk from "chalk";
+import fs from "fs";
+
 import renderPage from "../renderPage";
+import { createContentContext } from '../useContent';
 import { File, getPages, getPosts } from "../files";
 import { clearFileCache } from "../cacheTransform";
 import { resetCssStats, validateCss } from "../css";
 
-const files = new Set([...getPages(), ...getPosts()]);
+import { Feed } from 'Feed';
+
+const pages = getPages();
+const posts = getPosts();
+
+const files = new Set([...pages, ...posts]);
 const fileDependencies = new Map<File, Set<string>>();
 
 const run = (files: Set<File>, message: string) => {
@@ -17,6 +25,40 @@ const run = (files: Set<File>, message: string) => {
 
     fileDependencies.set(file, dependencies);
   });
+
+  const page = pages[0];
+
+  if (page) {
+    const host = fs.readFileSync('CNAME', 'utf8');
+
+    const baseURL = 'https://' + host + '/';
+
+    const feed = new Feed({
+      title: page.title || '',
+      description: page.description || '',
+      id: page.url,
+      link: baseURL,
+      copyright: 'Blocs 2021',
+      author: {
+        name: 'Jonathan Serra',
+        email: 'jonathan@blocs.fr',
+        link: baseURL,
+      }
+    });
+
+    posts.forEach((post) => {
+      feed.addItem({
+        title: post.title || '',
+        link: baseURL + post.url!,
+        date: post.date ? new Date(post.date) : new Date(),
+        description: post.description || '',
+      });
+    });
+
+    const content = createContentContext();
+
+    content.write(feed.rss2(), { filename: 'feed', extension: '.xml' });
+  }
 
   const end = Date.now();
   const duration = ((end - start) / 1000).toFixed(2);
