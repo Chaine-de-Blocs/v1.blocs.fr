@@ -3,7 +3,6 @@ const fs = require("fs");
 const { fork } = require("child_process");
 const chalk = require("chalk");
 const chokidar = require("chokidar");
-require("Feed");
 
 const projectDir = path.join(__dirname, "../..");
 
