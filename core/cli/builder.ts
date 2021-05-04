@@ -7,7 +7,7 @@ import { File, getPages, getPosts } from "../files";
 import { clearFileCache } from "../cacheTransform";
 import { resetCssStats, validateCss } from "../css";
 
-import RSS from 'Feed';
+import RSS from "Feed";
 
 const pages = getPages();
 const posts = getPosts();
