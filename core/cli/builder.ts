@@ -7,7 +7,7 @@ import { File, getPages, getPosts } from "../files";
 import { clearFileCache } from "../cacheTransform";
 import { resetCssStats, validateCss } from "../css";
 
-import RSS from "feed";
+import { Feed } from "feed";
 
 const pages = getPages();
 const posts = getPosts();
@@ -33,7 +33,7 @@ const run = (files: Set<File>, message: string) => {
 
     const baseURL = 'https://' + host + '/';
 
-    const feed = new RSS.Feed({
+    const feed = new Feed({
       title: page.title || '',
       description: page.description || '',
       id: page.url,
