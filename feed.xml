@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Articles de Blocs.fr</title>
+        <link>https://blocs.fr/</link>
+        <description>Articles de blocs.fr écrits personnellement par Jonathan Serra. Trouvez des contenus essentiellement techniques pour comprendre en profondeur certain sujets liés à cryptomonnaie, la cryptographie, le développement et le devops.</description>
+        <lastBuildDate>Tue, 04 May 2021 11:50:40 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <copyright>Blocs 2021</copyright>
+        <item>
+            <title><![CDATA[Servir Bitcoin et Lightning Network en étant anonyme avec Tor]]></title>
+            <link>https://blocs.fr/articles/bitcoin-et-lightning-anonyme-avec-tor</link>
+            <guid>https://blocs.fr/articles/bitcoin-et-lightning-anonyme-avec-tor</guid>
+            <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Vous avez un nœud Bitcoin et Lightning Network, vous participez à la décentralisation du réseau, bravo ! Cependant il réside un point noir, en particulier si votre noeud est localisé chez vous ou votre bureau... En connaissant votre adresse IP, publiée par le noeud, il est possible de vous localiser. On remédie à cela avec Tor.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Installer un nœud Lightning Network]]></title>
+            <link>https://blocs.fr/articles/installer-un-noeud-lightning-network</link>
+            <guid>https://blocs.fr/articles/installer-un-noeud-lightning-network</guid>
+            <pubDate>Tue, 31 Dec 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Envoyer des microtransactions bitcoin n'était pas possible jusqu'à l'arrivée de la technologie Lightning Network. C'est un système qui permet de faire des transactions quasi-instantannées et avec peu de frais.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Configurer son nœud Bitcoin Lightning Network]]></title>
+            <link>https://blocs.fr/articles/configurer-un-noeud-lightning-network</link>
+            <guid>https://blocs.fr/articles/configurer-un-noeud-lightning-network</guid>
+            <pubDate>Wed, 24 Apr 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Dans l'article précédent j'ai écrit au sujet de l'installation d'un nœud Bitcoin Lightning Network avec un Raspberry Pi. Ce dernier est sommaire et va à l'essentiel. Dans cet article il va s'agir d'optimiser la configuration du Raspberry Pi afin d'améliorer sa sécurité et rendre l'administration moins laborieuse.]]></description>
+        </item>
+    </channel>
+</rss>
