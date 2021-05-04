@@ -183,7 +183,8 @@ iframe {
   padding: 17px;
   background-color: var(--background);
   border-radius: 4px;
-  box-shadow: 7px 10px 15px rgba(10, 10, 10, 0.2);
+  border-width: 1px;
+  border-color: var(--color);
   overflow: hidden;
   max-width: 350px;
 }
