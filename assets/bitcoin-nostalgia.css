@@ -30,6 +30,10 @@ input, select {
     max-width: 120px;
 }
 
+select option {
+    background-color: var(--background);
+}
+
 #pl-result {
     font-weight: bold;
     font-size: 24px;
