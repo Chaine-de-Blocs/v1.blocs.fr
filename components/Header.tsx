@@ -14,6 +14,7 @@ type Props = {
   image?: string;
   imageAlt?: string;
   description?: string;
+  categories?: string;
 
   inlineCSS: string;
   inlineJS: string;
@@ -42,6 +43,7 @@ export default (props: Props) => {
       <meta property="og:title" content={props.title} />
       {props.description && <meta property="og:description" content={props.description} />}
       {props.description && <meta name="description" content={props.description} />}
+      {props.categories && <meta name="keywords" content={props.categories} />}
 
       {props.image && <meta property="og:image" content={resolveImagePath(props.image)} />}
       {props.imageAlt && <meta property="og:image:alt" content={props.imageAlt} />}

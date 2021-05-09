@@ -24,7 +24,7 @@ export type File = {
   date: number | null;
   image: string | null;
   imageAlt: string | null;
-  categories: string[] | null;
+  categories: string | null;
 };
 
 const pages: File[] = (glob.sync(
@@ -38,10 +38,7 @@ const pages: File[] = (glob.sync(
     date: null,
     image: pageMeta('image', filename),
     imageAlt: pageMeta('imageAlt', filename),
-    categories:
-      pageMeta('categories', filename)
-        ? pageMeta('categories', filename)!.split(',')
-        : null,
+    categories: pageMeta('categories', filename),
   })
 );
 
@@ -60,10 +57,7 @@ const posts: File[] = (glob.sync(
       image: pageMeta('image', filename),
       imageAlt: pageMeta('imageAlt', filename),
       date: Date.parse(filename.match(/(\d{4}-\d{2}-\d{2})/)![1]),
-      categories:
-        pageMeta('categories', filename)
-          ? pageMeta('categories', filename)!.split(',')
-          : null,
+      categories: pageMeta('categories', filename),
     })
   )
   .sort((a, b) => (b.date ?? 0) - (a.date ?? 0));

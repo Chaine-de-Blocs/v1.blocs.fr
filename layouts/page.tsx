@@ -9,6 +9,7 @@ export default ({
   description,
   image,
   imageAlt,
+  categories,
   css = "",
   js = "",
   primary,
@@ -28,6 +29,7 @@ export default ({
           description={description}
           image={image}
           imageAlt={imageAlt}
+          categories={categories}
           inlineCSS={css}
           inlineJS="/assets/set-hairline-width.js"
           assetsJS={js}

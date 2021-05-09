@@ -24,7 +24,7 @@ export default () => (
           {
             categories &&
               <div className={classNames('categories')}>
-                {categories.map((c, i) => <p key={i}>#{c}</p>)}
+                {categories.split(',').map((c, i) => <p key={i}>#{c}</p>)}
               </div>
           }
           <a href={url}>{title ?? url}</a>

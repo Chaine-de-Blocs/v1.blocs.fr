@@ -6,6 +6,7 @@ export interface LayoutProps {
     description?: string;
     image?: string;
     imageAlt?: string;
+    categories?: string;
     css?: string;
     js?: string;
     banner?: string;
