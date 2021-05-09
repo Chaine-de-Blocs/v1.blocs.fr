@@ -42,6 +42,20 @@ p {
   margin: 18px 0;
 }
 
+.categories {
+  display: flex;
+  flex-direction: row;
+}
+
+.categories p {
+  margin-right: 12px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
 /* On the iPhone SE, link and code elements can cause sideways scroll */
 p > code {
   word-break: break-all;

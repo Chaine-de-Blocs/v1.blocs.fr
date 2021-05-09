@@ -1,5 +1,5 @@
 import path from "path";
-import useContent, { Content } from "./useContent";
+import { Content } from "./useContent";
 import transformCss from "./transformCss";
 import transformJs from "./transformJs";
 import transformHtml from "./transformHtml";

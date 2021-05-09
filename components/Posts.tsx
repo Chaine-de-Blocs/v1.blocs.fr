@@ -6,7 +6,7 @@ import { className, classNames } from "../core/css";
 
 export default () => (
   <ul className={className("post-list")}>
-    {getPosts().map(({ url, title, filename, image, date, description }) => (
+    {getPosts().map(({ url, title, filename, image, date, description, categories }) => (
       <li className={classNames("post-preview ripple-container") + " post-preview-selector"} key={filename} data-post-url={url}>
         {
           image &&
@@ -21,6 +21,12 @@ export default () => (
             </Image>
         }
         <div>
+          {
+            categories &&
+              <div className={classNames('categories')}>
+                {categories.map((c, i) => <p key={i}>#{c}</p>)}
+              </div>
+          }
           <a href={url}>{title ?? url}</a>
           <p className={classNames('post-description')}>{description}</p>
           <p className={classNames('edit-date')}>

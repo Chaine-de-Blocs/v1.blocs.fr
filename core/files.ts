@@ -5,15 +5,15 @@ import glob from "glob";
 // @ts-ignore
 import frontmatter from "frontmatter";
 
-type PageMetaKey = 'title' | 'description' | 'image';
+type PageMetaKey = 'title' | 'description' | 'image' | 'imageAlt' | 'categories';
 
 const name = (filename: string) =>
   path.basename(filename, path.extname(filename));
 
-const pageMeta = <T>(key: PageMetaKey, filename: string): T | null => {
+const pageMeta = (key: PageMetaKey, filename: string): string | null => {
   const content = fs.readFileSync(filename, "utf8");
   const { data } = frontmatter(content);
-  return data[key] as T ?? null;
+  return data[key] ?? null;
 }
 
 export type File = {
@@ -23,6 +23,8 @@ export type File = {
   filename: string;
   date: number | null;
   image: string | null;
+  imageAlt: string | null;
+  categories: string[] | null;
 };
 
 const pages: File[] = (glob.sync(
@@ -35,6 +37,11 @@ const pages: File[] = (glob.sync(
     filename,
     date: null,
     image: pageMeta('image', filename),
+    imageAlt: pageMeta('imageAlt', filename),
+    categories:
+      pageMeta('categories', filename)
+        ? pageMeta('categories', filename)!.split(',')
+        : null,
   })
 );
 
@@ -51,7 +58,12 @@ const posts: File[] = (glob.sync(
       description: pageMeta('description', filename),
       filename,
       image: pageMeta('image', filename),
+      imageAlt: pageMeta('imageAlt', filename),
       date: Date.parse(filename.match(/(\d{4}-\d{2}-\d{2})/)![1]),
+      categories:
+        pageMeta('categories', filename)
+          ? pageMeta('categories', filename)!.split(',')
+          : null,
     })
   )
   .sort((a, b) => (b.date ?? 0) - (a.date ?? 0));

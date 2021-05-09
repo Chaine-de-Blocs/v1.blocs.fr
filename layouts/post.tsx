@@ -1,4 +1,4 @@
-import { className, classNames, variable } from "../core/css";
+import { className, variable } from "../core/css";
 
 import Header from '../components/Header';
 import Nav from '../components/Nav';
