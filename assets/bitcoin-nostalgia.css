@@ -1,0 +1,48 @@
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.anchor-link {
+    display: none;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+input, select {
+    background-color: transparent;
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0 10px;
+    color: var(--color);
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    max-width: 120px;
+}
+
+#pl-result {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--secondary);
+    margin: 0 10px;
+}
+
+a {
+    color: var(--primary);
+}
+
+.error {
+    visibility: hidden;
+    color: var(--light);
+    font-size: 14px;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { tokenToString } from 'typescript';
 
 import { className, classNames } from "../core/css";
+import Header from './Header';
 
 const HeaderNav = ({ children }: { children: any }) => (
     <div className={className("header")}>{children}</div>
@@ -47,6 +48,7 @@ export default class extends React.Component {
         <HeaderSection>Site</HeaderSection>
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderSection last>Cool</HeaderSection>
+        <HeaderLink href="bitcoin-nostalgia">Go BTC</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
 
         <a href="#" className={classNames("header__link")} id="theme-switch" title="Changer la couleur du fond">

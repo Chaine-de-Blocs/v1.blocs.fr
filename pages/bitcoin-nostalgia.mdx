@@ -1,0 +1,31 @@
+---
+title: Bitcoin Nostalgia - Le regret d'une séparation ou le manque d'une rencontre
+description: Combien de fois avons nous entendu "Si j'avais investi sur Bitcoin plus tôt..." ou "Si j'avais gardé mes bitcoins en 2013...". Ces plaignants seraient aujourd'hui assis sur un patrimoine me foi confortable. Les chiffres le montrent, cette page les montre
+categories: bitcoin, prix, j'aurais du investir sur Bitcoin
+layout: page
+css: bitcoin-nostalgia
+js: bitcoin-nostalgia
+---
+
+<section id="banner">
+  <h1>Combien auriez vous si vous aviez acheté des bitcoins ?</h1>
+  <div className="row-content">
+    <label>
+      Si j'avais investi
+    </label>
+    <input type="number" name="euros-invested" defaultValue="1" />
+    <p>
+      euros en
+    </p>
+    <select name="year" id="year-picker">
+    </select>
+    <button id="wanna-cry" className="btn plain">Calculer</button>
+  </div>
+  <div className="row-content">
+    <p>Aujourd'hui j'aurais</p>
+    <p id="pl-result">...</p>
+  </div>
+  <p className="error" id="error-display">
+    Oups, y'a un soucis quelque part, revenez plus tard 🤨 Retrouvez moi sur <a href="https://t.me/Bl0cs" target="_blank">Telegram</a>
+  </p>
+</section>
