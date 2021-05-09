@@ -48,7 +48,15 @@ export default ({
       </head>
       <body>
         <Nav />
+        {
+          categories &&
+            <div className={className('categories')}>
+              {categories.split(',').map((c, i) => <p key={i}>#{c}</p>)}
+            </div>
+        }
+
         {children}
+
         {file.date != null && (
           <span className={className("published-on")}>
             Modifié le {" "}
