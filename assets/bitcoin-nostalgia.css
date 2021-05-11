@@ -17,9 +17,19 @@
     align-items: center;
 }
 
+.row-content .invested-container,
+.row-content .in-date-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.row-content .invested-container p {
+    margin-right: 8px;
+}
+
 input, select {
     background-color: transparent;
-    border: 1px solid var(--secondary);
+    border: 1px solid var(--primary);
     border-radius: 5px;
     padding: 8px;
     margin: 0 10px;
@@ -36,9 +46,14 @@ select option {
 
 #pl-result {
     font-weight: bold;
-    font-size: 24px;
-    color: var(--secondary);
+    font-size: 30px;
+    color: var(--green);
     margin: 0 10px;
+}
+
+.infos {
+    font-size: 12px;
+    color: var(--light);
 }
 
 a {
@@ -49,4 +64,17 @@ a {
     visibility: hidden;
     color: var(--light);
     font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .row-content {
+        flex-direction: column;
+    }
+    .row-content .in-year {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .in-date-container {
+        margin-bottom: 10px;
+    }
 }

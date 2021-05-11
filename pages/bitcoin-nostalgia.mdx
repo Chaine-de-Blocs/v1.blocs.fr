@@ -10,21 +10,27 @@ js: bitcoin-nostalgia
 <section id="banner">
   <h1>Combien d'euros auriez vous <u>maintenant</u> si vous aviez acheté des bitcoins ?</h1>
   <div className="row-content">
-    <label>
-      Si j'avais investi
-    </label>
-    <input type="number" name="euros-invested" defaultValue="1" />
-    <p>
-      euros en
-    </p>
-    <select name="year" id="year-picker">
-    </select>
+    <div className="invested-container">
+      <label>
+        Si j'avais investi
+      </label>
+      <input type="number" name="euros-invested" defaultValue="1" />
+      <p>
+        euros
+      </p>
+    </div>
+    <div className="in-date-container">
+      <p>en</p>
+      <select name="year" id="year-picker">
+      </select>
+    </div>
     <button id="wanna-cry" className="btn plain">Calculer</button>
   </div>
   <div className="row-content">
-    <p>Aujourd'hui j'aurais</p>
-    <p id="pl-result">...</p>
+    <h2><u>Aujourd'hui</u> j'aurais</h2>
+    <p id="pl-result">🤔</p>
   </div>
+  <i className="infos">La date exacte pour les calculs est le jour et le mois actuels sur l'année sélectionnée</i>
   <p className="error" id="error-display">
     Oups, y'a un soucis quelque part, revenez plus tard 🤨 Retrouvez moi sur <a href="https://t.me/Bl0cs" target="_blank">Telegram</a>
   </p>

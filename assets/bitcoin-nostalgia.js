@@ -60,24 +60,12 @@ const apiURL = 'https://rest.coinapi.io';
 
 function getBTCCurrentPrice() {
     const apiURL = 'https://blockchain.info/tobtc?currency=EUR&value=1';
-    return new Promise((resolve, reject) => {
-        const req = new XMLHttpRequest();
-        
-        req.onreadystatechange = function(_) {
-            if (this.readyState === 4 && this.status === 200) {
-                if (typeof req.response !== 'string') {
-                    reject();
-                    return;
-                }
-                resolve(1 / req.response);
-            } else if (this.readyState === 4) {
-                reject();
-            }
-        }
-        
-        req.open('GET', apiURL, true);
-        req.send();
-    });
+    const body = {
+        method: 'GET',
+    }
+    return fetch(apiURL, body)
+        .then(res => res.text())
+        .then(value => 1 / value);
 }
 
 function getPrice(date /* Date */) {
@@ -95,23 +83,14 @@ function getPrice(date /* Date */) {
 
     const endpoint = `/v1/exchangerate/BTC/EUR?time=${yyyy}${MM}${dd}`;
 
-    return new Promise((resolve, reject) => {
-        const req = new XMLHttpRequest()
-        
-        req.onreadystatechange = function(e) {
-            if (this.readyState === 4 && this.status === 200) {
-                const data = JSON.parse(req.responseText);
-                if (data.rate) {
-                    resolve(data.rate);
-                }
-            } else if (this.readyState === 4) {
-                reject(this.status);
-            }
+    const body = {
+        method: 'GET',
+        headers: {
+            'X-CoinAPI-Key': '33FB9E6F-E14B-49DE-8B2C-17CDCA3E5DAA',
+            'Accept': 'application/json',
         }
-        
-        req.open('GET', apiURL + endpoint, true);
-        req.setRequestHeader('X-CoinAPI-Key', '33FB9E6F-E14B-49DE-8B2C-17CDCA3E5DAA');
-        req.setRequestHeader('Accept', 'application/json');
-        req.send();
-    });
+    }
+    return fetch(apiURL + endpoint, body)
+        .then(res => res.json())
+        .then(data => data.rate);
 }
