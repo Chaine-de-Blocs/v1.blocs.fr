@@ -27,7 +27,7 @@ const apiURL = 'https://rest.coinapi.io';
 
     const reset = () => {
         errorElt.style.visibility = 'hidden';
-        resultElt.textContent = '...';
+        resultElt.textContent = '🤔';
     }
 
     try {
@@ -92,5 +92,10 @@ function getPrice(date /* Date */) {
     }
     return fetch(apiURL + endpoint, body)
         .then(res => res.json())
-        .then(data => data.rate);
+        .then(data => {
+            if (data.error) {
+                throw data.error;
+            }
+            return data.rate;
+        });
 }
