@@ -48,7 +48,7 @@ export default class extends React.Component {
         <HeaderSection>Site</HeaderSection>
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderSection last>Cool</HeaderSection>
-        <HeaderLink href="bitcoin-nostalgia">Go BTC</HeaderLink>
+        <HeaderLink href="/bitcoin-nostalgia">Go BTC</HeaderLink>
         <HeaderLink href="/blog">Blog</HeaderLink>
 
         <a href="#" className={classNames("header__link")} id="theme-switch" title="Changer la couleur du fond">
