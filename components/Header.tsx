@@ -45,7 +45,7 @@ export default (props: Props) => {
       {props.description && <meta name="description" content={props.description} />}
       {props.categories && <meta name="keywords" content={props.categories} />}
 
-      {props.image && <meta property="og:image" content={resolveImagePath(props.image)} />}
+      {props.image && <meta property="og:image" content={`https://blocs.fr${resolveImagePath(props.image)}`} />}
       {props.imageAlt && <meta property="og:image:alt" content={props.imageAlt} />}
       
       <meta property="og:type" content="blog" />
