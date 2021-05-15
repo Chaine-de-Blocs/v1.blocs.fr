@@ -30,6 +30,8 @@ const apiURL = 'https://rest.coinapi.io';
         resultElt.textContent = '🤔';
     }
 
+    const twitterShare = document.querySelector('#btceur-twitter');
+
     try {
         const currentPrice = await getBTCCurrentPrice();
         action.addEventListener('click', async (_) => {
@@ -47,9 +49,20 @@ const apiURL = 'https://rest.coinapi.io';
                     currencyDisplay: 'code',
                 });
     
-                resultElt.textContent = formatter.format(res);
-            } catch(status) {
-                // status === 429 means request limit
+                const resFmt = formatter.format(res);
+                resultElt.textContent = resFmt;
+
+                const eurInvestedFmt = formatter.format(eurosInvestedInput.value);
+
+                const twitterShareHref = twitterShare.getAttribute('href');
+                const twitterShareURL = new URL(twitterShareHref);
+
+                twitterShareURL.searchParams.set('text', `Si j'avais investi ${eurInvestedFmt} sur Bitcoin, aujourd'hui j'aurais ${resFmt}... Et toi ? https://blocs.fr/bitcoin-nostalgia`);
+
+                twitterShare.setAttribute('href', twitterShareURL.href);
+            } catch(e) {
+                console.error(e, `Si c'est marqué 429, la limite de requête a été atteinte :(`);
+                // e === 429 means request limit
                 errorElt.style.visibility = 'visible';
             }
         });

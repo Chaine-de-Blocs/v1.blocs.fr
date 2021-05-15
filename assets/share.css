@@ -1,0 +1,19 @@
+.twitter-share-button-container {
+    display: inline-block;
+    overflow: hidden;
+    background-color: #1b95e0;
+    border-radius: 4px;
+    padding: 0px 10px 1px 9px;
+    cursor: pointer;
+}
+.twitter-share-button-container i {
+    font-size: 14px;
+}
+.twitter-share-button {
+    color: #FFF;
+    text-align: center;
+    line-height: 26px;
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+}
