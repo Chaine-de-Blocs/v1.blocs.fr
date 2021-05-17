@@ -1,4 +1,4 @@
-import { className, classNames } from "../core/css";
+import { classNames } from "../core/css";
 
 type Social = 'twitter';
 

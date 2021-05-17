@@ -19,9 +19,9 @@ const run = (files: Set<File>, message: string) => {
   const start = Date.now();
   console.log(chalk.dim(`[${message}...]`));
 
-  files.forEach((file) => {
+  files.forEach(async (file) => {
     console.log(`- Building ${file.title ?? file.url}`);
-    const { dependencies } = renderPage(file);
+    const { dependencies } = await renderPage(file);
 
     fileDependencies.set(file, dependencies);
   });

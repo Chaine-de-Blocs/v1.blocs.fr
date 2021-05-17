@@ -5,7 +5,6 @@ import minifier from "posthtml-minifier";
 // @ts-ignore
 import { Content } from "./useContent";
 import { classNames } from "./css";
-// import { isReactComponent } from "./htmlUtil";
 
 const transformClassNames = () => (tree: any) =>
   tree.walk((node: any) => {

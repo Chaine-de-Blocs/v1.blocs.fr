@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 // @ts-ignore
 import glob from "glob";
 // @ts-ignore
@@ -20,6 +20,7 @@ export type Content = {
     content: Buffer | string,
     options: { filename?: string; extension: string }
   ) => string;
+  requests: Array<any>;
 };
 
 const modulePath = (directory: string, filename: string) => {
@@ -104,7 +105,23 @@ export const createContentContext = (): Content => {
     assetBuffer: (filename) =>
       fs.readFileSync(addFilenameDependency(assetPath(filename))),
     write: (content, options) => write(content, options),
+    requests: [],
   };
+};
+
+export const useServerEffect = (initial: any, key: string, effect: any) => {  
+  const context = useContext(ContentContext);
+  // @ts-ignore
+  const [data] = useState(context[key] || initial);
+  if (context.requests) {
+    context.requests.push(
+      effect().then((data: any) => {
+        // @ts-ignore
+        context[key] = data;
+      })
+    );
+  }
+  return [data];
 };
 
 export const ContentContext = createContext<Content>(null!);

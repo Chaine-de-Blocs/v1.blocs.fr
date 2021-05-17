@@ -1,4 +1,6 @@
-import { renderToStaticMarkup } from "react-dom/server";
+import { renderToString } from "react-dom/server";
+// @ts-ignore
+import { renderToStaticMarkupAsync } from "react-async-ssr";
 // @ts-ignore
 import MDX from "@mdx-js/runtime";
 // @ts-ignore
@@ -103,7 +105,7 @@ const transform = cacheTransform<Transform>((content, file: File) => {
   };
 });
 
-export default (file: File) => {
+export default async (file: File) => {
   const content = createContentContext();
 
   // You can cache converting mdx into React elements
@@ -116,7 +118,21 @@ export default (file: File) => {
   const { layout } = data;
   const Layout = layout != null ? content.layout(layout) : DefaultLayout;
 
-  const htmlFragment = renderToStaticMarkup(
+  // Triggers all renders in order to initiate async useState in components
+  renderToString(
+    <ContentContext.Provider value={content}>
+      <Layout {...data} file={file}>
+        {children}
+      </Layout>
+    </ContentContext.Provider>
+  );
+
+  if (content.requests.length > 0) {
+    await Promise.all(content.requests);
+    content.requests = [];
+  }
+  
+  const htmlFragment = await renderToStaticMarkupAsync(
     <ContentContext.Provider value={content}>
       <Layout {...data} file={file}>
         {children}
