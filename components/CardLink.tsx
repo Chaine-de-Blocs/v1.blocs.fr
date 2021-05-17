@@ -1,11 +1,8 @@
 import { classNames } from "../core/css";
 
-import { Image } from "../core/components";
-
 import { useServerEffect } from "../core/useContent";
 
 import ogs, { SuccessResult } from "open-graph-scraper";
-import { useState } from "react";
 
 type Props = {
     href: string;
@@ -42,7 +39,7 @@ const parseMeta = async (url: string): Promise<OGMetaResult> => {
 }
 
 export default (props: Props) => {
-    const [ogmeta]: any =
+    const [ogmeta]: Array<OGMetaResult> =
         useServerEffect(null, "_ogmeta_", async () => parseMeta(props.href));
 
     if (ogmeta === null) {
@@ -52,14 +49,22 @@ export default (props: Props) => {
     }
 
     return (
-        <div className={classNames('og-card')}>
-            <img src={ogmeta.ogImage ? ogmeta.ogImage.url : ''} />
+        <div className={classNames('og-card') + ' card-link'} data-card-href={props.href}>
+            {
+                ogmeta.ogImage &&
+                    <div className={classNames('thumbnail')}>
+                        <img src={ogmeta.ogImage.url} />
+                    </div>
+            }
             <div className={classNames('content')}>
                 <p className={classNames('title')}>
                     {ogmeta.ogTitle}
                 </p>
                 <p className={classNames('description')}>
                     {ogmeta.ogDescription}
+                </p>
+                <p className={classNames('website')}>
+                    {ogmeta.requestUrl}
                 </p>
             </div>
         </div>
