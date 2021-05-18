@@ -217,6 +217,7 @@ iframe {
   margin-left: 20px;
 }
 .summary .insert > div a {
+  font-size: 16px;
   display: block;
   text-decoration: none;
 }
@@ -461,6 +462,7 @@ iframe {
   cursor: pointer;
   align-items: center;
   background-color: var(--background);
+  margin-bottom: 15px;
 }
 .og-card .thumbnail {
   max-width: 300px;

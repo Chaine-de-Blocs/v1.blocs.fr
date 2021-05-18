@@ -7,6 +7,9 @@ import ogs, { SuccessResult } from "open-graph-scraper";
 type Props = {
     href: string;
     defaultTitle: string;
+    defaultDescription: string;
+
+    forceDefault?: boolean;
 }
 
 interface OGMetaResult extends SuccessResult {
@@ -38,6 +41,20 @@ const parseMeta = async (url: string): Promise<OGMetaResult> => {
     });
 }
 
+const getDescription = (ogMeta: OGMetaResult, props: Props) => {
+    if (props.forceDefault) {
+        return props.defaultDescription;
+    }
+    return ogMeta.ogDescription || props.defaultDescription;
+}
+
+const getTitle = (ogMeta: OGMetaResult, props: Props) => {
+    if (props.forceDefault) {
+        return props.defaultTitle;
+    }
+    return ogMeta.ogTitle || props.defaultTitle;
+}
+
 export default (props: Props) => {
     const [ogmeta]: Array<OGMetaResult> =
         useServerEffect(null, "_ogmeta_", async () => parseMeta(props.href));
@@ -58,10 +75,10 @@ export default (props: Props) => {
             }
             <div className={classNames('content')}>
                 <p className={classNames('title')}>
-                    {ogmeta.ogTitle}
+                    {getTitle(ogmeta, props)}
                 </p>
                 <p className={classNames('description')}>
-                    {ogmeta.ogDescription}
+                    {getDescription(ogmeta, props)}
                 </p>
                 <p className={classNames('website')}>
                     {ogmeta.requestUrl}

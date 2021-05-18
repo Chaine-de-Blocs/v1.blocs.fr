@@ -119,6 +119,11 @@ a:hover, a:active {
   text-decoration: underline;
 }
 
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 .socials a span {
   font-size: 26px;
 }
