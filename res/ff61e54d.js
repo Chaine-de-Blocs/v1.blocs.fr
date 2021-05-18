@@ -1,0 +1,1 @@
+!function(){const n=document.querySelectorAll(".card-link");for(const c in n)n[c].onclick=function(o){window.open(n[c].dataset.cardHref,"_blank")}}();
