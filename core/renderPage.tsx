@@ -19,7 +19,7 @@ import htmlComponents from "./htmlComponents";
 const DefaultLayout = (props: any) => (
   <html>
     <head>
-      <title>{props.title ?? "Cool website"}</title>
+      <title>{props.title ?? "Blocs.fr"}</title>
       <meta charSet="utf-8" />
     </head>
     <body>{props.children}</body>
@@ -68,7 +68,7 @@ const H3 = ({ children }: any) => {
 };
 
 const transform = cacheTransform<Transform>((content, file: File) => {
-  const page = frontmatter(content.page(file.filename));
+  const page: any = frontmatter(content.page(file.filename));
 
   const userComponents = getComponentNames().reduce((accum, TagName) => {
     accum[TagName] = (props: any) => {

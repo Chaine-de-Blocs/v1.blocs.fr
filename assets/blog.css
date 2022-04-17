@@ -118,6 +118,8 @@ blockquote {
   font-weight: 300;
   font-style: italic;
   color: var(--light);
+  padding-left: 20px;
+  border-left: 4px solid var(--primary);
 }
 
 table {
@@ -168,7 +170,9 @@ iframe {
 }
 
 .published-on {
-  color: #9e9e9e;
+  color: var(--color);
+  font-style: italic;
+  font-size: 14px;
 }
 
 .post-preview {

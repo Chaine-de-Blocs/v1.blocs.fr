@@ -115,10 +115,14 @@ export const useServerEffect = (initial: any, key: string, effect: any) => {
   const [data] = useState(context[key] || initial);
   if (context.requests) {
     context.requests.push(
-      effect().then((data: any) => {
-        // @ts-ignore
-        context[key] = data;
-      })
+      effect()
+        .then((data: any) => {
+          // @ts-ignore
+          context[key] = data;
+        })
+        .catch((e: Error) => {
+          throw e ?? new Error(`failed to set context [key=${key},context=${JSON.stringify(context)}]`);
+        })
     );
   }
   return [data];

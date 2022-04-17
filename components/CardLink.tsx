@@ -30,7 +30,7 @@ const parseMeta = async (url: string): Promise<OGMetaResult> => {
             url
         }, (err, res) => {
             if (err) {
-                reject();
+                reject(new Error(`card link failed to parse meta of ${url}`));
                 return;
             }
         

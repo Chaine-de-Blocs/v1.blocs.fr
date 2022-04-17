@@ -21,9 +21,12 @@ const run = (files: Set<File>, message: string) => {
 
   files.forEach(async (file) => {
     console.log(`- Building ${file.title ?? file.url}`);
-    const { dependencies } = await renderPage(file);
-
-    fileDependencies.set(file, dependencies);
+    try {
+      const { dependencies } = await renderPage(file);
+      fileDependencies.set(file, dependencies);
+    } catch(e) {
+      console.warn(`Got error while building [err=${e},page_title=${file.title}]`)
+    }
   });
 
   const page = pages[0];
