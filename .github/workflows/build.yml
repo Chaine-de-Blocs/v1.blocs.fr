@@ -14,12 +14,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          persist-credentials: false
 
       - name: Dependencies
         uses: bahmutov/npm-install@v1.6.0
