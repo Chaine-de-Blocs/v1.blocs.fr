@@ -57,7 +57,16 @@ const getTitle = (ogMeta: OGMetaResult, props: Props) => {
 
 export default (props: Props) => {
     const [ogmeta]: Array<OGMetaResult> =
-        useServerEffect(null, "_ogmeta_", async () => parseMeta(props.href));
+        useServerEffect(null, "_ogmeta_", async () => {
+            try {
+                return await parseMeta(props.href);
+            } catch(_) {
+                return {
+                    ogTitle: "Oups, le titre n'a pas été trouvé :(",
+                    ogDescription: "La description non plus, du coup"
+                }
+            }
+        });
 
     if (ogmeta === null) {
         return (
