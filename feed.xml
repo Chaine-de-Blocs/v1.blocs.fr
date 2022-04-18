@@ -4,10 +4,87 @@
         <title>Bitcoin Nostalgia - Le regret d'une séparation ou le manque d'une rencontre</title>
         <link>https://blocs.fr/</link>
         <description>Combien de fois avons nous entendu "Si j'avais investi sur Bitcoin plus tôt..." ou "Si j'avais gardé mes bitcoins en 2013...". Ces plaignants seraient aujourd'hui assis sur un patrimoine me foi confortable. Les chiffres le montrent, cette page les montre</description>
-        <lastBuildDate>Sun, 26 Sep 2021 22:02:33 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 18 Apr 2022 23:48:45 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Blocs 2021</copyright>
+        <item>
+            <title><![CDATA[1 - Mastering the Lightning Network - Comprendre Bitcoin et le Lightning Network]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-1</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-1</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Introduction à Lightning Network et Bitcoin. Comment le protocole intègre un protocole d'équilibre permettant à des acteurs du réseau Lightning Network de se faire confiance.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[2 - Mastering the Lightning Network - Paiement avec Bitcoin et Lightning Network]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-2</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-2</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 2 - Le commencement]]></description>
+        </item>
+        <item>
+            <title><![CDATA[3 - Mastering the Lightning Network - Transaction d'engagement (commitment tx)]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-3</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-3</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 3 - Comment le Lightning Network fonctionne]]></description>
+        </item>
+        <item>
+            <title><![CDATA[4 - Mastering the Lightning Network - Créer un réseau de nœud Lightning Network]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-4</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-4</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 4 - Les clients Lightning Network]]></description>
+        </item>
+        <item>
+            <title><![CDATA[5 - Mastering the Lightning Network - Installer un serveur Bitcoin et LN]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-5</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-5</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 5 - Opérer un serveur Lightning Network]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6 - Mastering the Lightning Network - Comprendre la commitment transaction]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-6</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-6</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 6 - Architecture Lightning Network; Chapitre 7 - Les canaux de paiement]]></description>
+        </item>
+        <item>
+            <title><![CDATA[7 - Mastering the Lightning Network - Routage, secret de paiement et HTLC sur LN]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-7</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-7</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 8 - Routage dans le canaux de paiment]]></description>
+        </item>
+        <item>
+            <title><![CDATA[9 - Mastering the Lightning Network - Onion routing, Gossip protocol et Path Finding]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-9</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-9</guid>
+            <pubDate>Sun, 17 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 10 - Routage en oignon; Chapitre 11 - Protocole de Gossip; Chapitre 12 - Path Finding]]></description>
+        </item>
+        <item>
+            <title><![CDATA[10 - Mastering the Lightning Network - Les messages sur Lightning Network (TLV, e2e encryption)]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-10</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-10</guid>
+            <pubDate>Thu, 07 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 13 - Wire Protocol; Chapitre 14 - Chiffrement bout à bout]]></description>
+        </item>
+        <item>
+            <title><![CDATA[11 - Mastering the Lightning Network - Informations Paiement et vie privée en vidéo]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-11</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-11</guid>
+            <pubDate>Wed, 06 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[On lit le livre Mastering the Lightning Network (LN) en Direct ! Chapitre 15 - Requête de paiement; Chapitre 16 - Vie privée avec LN]]></description>
+        </item>
+        <item>
+            <title><![CDATA[12 - Mastering the Lightning Network - Chapitre final en vidéo]]></title>
+            <link>https://blocs.fr/articles/mastering-the-lightning-network-12</link>
+            <guid>https://blocs.fr/articles/mastering-the-lightning-network-12</guid>
+            <pubDate>Tue, 05 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Fin du livre et setup d'un serveur Bitcon et Lightning Network avec getumbrel]]></description>
+        </item>
         <item>
             <title><![CDATA[Le développement Blockchain, par où commencer ?]]></title>
             <link>https://blocs.fr/articles/le-developpement-blockchain-par-ou-commencer</link>
