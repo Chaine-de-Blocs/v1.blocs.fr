@@ -8,7 +8,7 @@ type Props = {
     href: string;
     defaultTitle: string;
     defaultDescription: string;
-    defaultImage: string;
+    fallbackImage: string;
 
     forceDefault?: boolean;
 }
@@ -57,13 +57,10 @@ const getTitle = (ogMeta: OGMetaResult, props: Props) => {
 }
 
 const getImage = (ogMeta: OGMetaResult, props: Props) => {
-    if (props.forceDefault) {
-        return props.defaultImage;
-    }
     if (ogMeta.ogImage) {
         return ogMeta.ogImage.url;
     }
-    return props.defaultImage;
+    return props.fallbackImage;
 }
 
 export default (props: Props) => {
@@ -100,7 +97,7 @@ export default (props: Props) => {
                     {getDescription(ogmeta, props)}
                 </p>
                 <p className={classNames('website')}>
-                    {ogmeta.requestUrl}
+                    {props.href}
                 </p>
             </div>
         </div>
