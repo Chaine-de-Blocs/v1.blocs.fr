@@ -8,6 +8,7 @@ type Props = {
     href: string;
     defaultTitle: string;
     defaultDescription: string;
+    defaultImage: string;
 
     forceDefault?: boolean;
 }
@@ -55,6 +56,16 @@ const getTitle = (ogMeta: OGMetaResult, props: Props) => {
     return ogMeta.ogTitle || props.defaultTitle;
 }
 
+const getImage = (ogMeta: OGMetaResult, props: Props) => {
+    if (props.forceDefault) {
+        return props.defaultImage;
+    }
+    if (ogMeta.ogImage) {
+        return ogMeta.ogImage.url;
+    }
+    return props.defaultImage;
+}
+
 export default (props: Props) => {
     const [ogmeta]: Array<OGMetaResult> =
         useServerEffect(null, "_ogmeta_", async () => {
@@ -77,10 +88,9 @@ export default (props: Props) => {
     return (
         <div className={classNames('og-card') + ' card-link'} data-card-href={props.href}>
             {
-                ogmeta.ogImage &&
-                    <div className={classNames('thumbnail')}>
-                        <img src={ogmeta.ogImage.url} />
-                    </div>
+                <div className={classNames('thumbnail')}>
+                    <img src={getImage(ogmeta, props)} />
+                </div>
             }
             <div className={classNames('content')}>
                 <p className={classNames('title')}>
